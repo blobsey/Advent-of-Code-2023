@@ -1,11 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Day08 {
 
@@ -43,7 +41,6 @@ public class Day08 {
 
             // Find answer to part 1
             // Follow instructions (repeating if necessary) until end at "ZZZ"
-
             int steps = 0;
             String current = "AAA";
             try {
