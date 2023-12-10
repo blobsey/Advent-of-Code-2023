@@ -9,7 +9,7 @@ public class Day06 {
     public static void main(String[] args) {
 //        String line;
         try {
-            BufferedReader in = new BufferedReader(new FileReader("input.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("input06.txt"));
             int[] times = Arrays.stream(in.readLine().split("Time:\\s+")[1].split("\\s+"))
                     .mapToInt(Integer::parseInt)
                     .toArray();
