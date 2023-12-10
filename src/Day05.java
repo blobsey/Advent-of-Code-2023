@@ -51,7 +51,7 @@ public class Day05 {
 
     public static void main(String[] args) {
 
-        try (BufferedReader in = new BufferedReader(new FileReader("input05.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("input/input05.txt"))) {
 
             String line = in.readLine();
             if (line == null) return;

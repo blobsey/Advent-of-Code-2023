@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Day02 {
     public static void main(String[] args) {
-        try (BufferedReader in = new BufferedReader(new FileReader("input02.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("input/input02.txt"))) {
             //Ex line == "Game 1: 19 blue, 12 red; 19 blue, 2 green, 1 red; 13 red, 11 blue"
             String line;
             int sum = 0;

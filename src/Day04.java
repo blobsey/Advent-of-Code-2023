@@ -15,7 +15,7 @@ public class Day04 {
 
     public static void main(String[] args) {
 
-        try (BufferedReader in = new BufferedReader(new FileReader("input04.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("input/input04.txt"))) {
             String line;
             int totalScore = 0, totalCards = 0, totalCardsFinal = 0;
 

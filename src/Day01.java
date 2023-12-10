@@ -7,7 +7,7 @@ import java.util.Set;
 public class Day01 {
     public static void main(String[] args) throws IOException {
 
-        try (BufferedReader in = new BufferedReader(new FileReader("input01.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("input/input01.txt"))) {
             Map<String, Integer> digitsLen3 = Map.of(
                     "one", 1,
                     "two", 2,

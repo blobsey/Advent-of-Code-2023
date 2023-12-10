@@ -23,7 +23,7 @@ public class Day03 {
     private static void readGrid() {
         List<char[]> lines = new ArrayList<>();
 
-        try (BufferedReader in = new BufferedReader(new FileReader("input03.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("input/input03.txt"))) {
             String line;
             while ((line = in.readLine()) != null) lines.add(line.toCharArray());
         }

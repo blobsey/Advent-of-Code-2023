@@ -156,7 +156,7 @@ public class Day07 {
 
     public static void main(String[] args) {
         try {
-            BufferedReader in = new BufferedReader(new FileReader("input07.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("input/input07.txt"));
             String line;
             TreeMap<Integer, Integer> hands = new TreeMap<>();
             TreeMap<Integer, Integer> handsWildcards = new TreeMap<>();

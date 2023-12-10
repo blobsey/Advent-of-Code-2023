@@ -18,7 +18,7 @@ public class Day08 {
     }
     public static void main(String[] args) {
         try {
-            BufferedReader in = new BufferedReader(new FileReader("input08.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("input/input08.txt"));
 
             String directions = in.readLine();
             String line;
@@ -41,11 +41,6 @@ public class Day08 {
                 } catch (ArrayIndexOutOfBoundsException e) { continue; }
             }
 
-            // Print out graph
-            for (Map.Entry<String, String[]> entry : graph.entrySet()) {
-                System.out.println(entry.getKey() + " " + Arrays.toString(entry.getValue()));
-            }
-
             // Find answer to part 1
             // Follow instructions (repeating if necessary) until end at "ZZZ"
 
@@ -66,7 +61,6 @@ public class Day08 {
 
             // Find answer to part 2
             // Iterate through startPoints, follow instructions until all are some "**Z"
-            System.out.println(startPoints);
             long[] stepsArray = new long[startPoints.size()];
             current = "";
             try {
@@ -83,8 +77,7 @@ public class Day08 {
                 throw e;
             }
 
-            System.out.println(Arrays.toString(stepsArray));
-            // multiply all the steps together to find the lowest common multiple
+            // find the lowest common multiple
             long part2Answer = Arrays.stream(stepsArray).reduce(1, Day08::lcm);
 
             System.out.println("The answer to part 2 is: " + part2Answer);
