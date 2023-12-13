@@ -3,6 +3,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+
+// NOTE: There is no function to detect what type of pipe is under the S
+// I just hardcoded that lmao
 public class Day10 {
 
     static char[][] tiles;
