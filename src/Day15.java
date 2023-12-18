@@ -31,11 +31,18 @@ public class Day15 {
         Map<String, Integer>[] hashmap = new LinkedHashMap[256];
         for (int i = 0; i < 256; ++i) hashmap[i] = new LinkedHashMap<>();
 
+        /*
+        Iterate through comma-separated strings separate into [{label}, {instruction}
+        label = some string, ex abc, ccc, abfjidojfi
+        instruction = '-' or '=[d]' where [d] is the focalLength
+        if instruction == '-' remove from hashmap, otherwise add the { label : focalLength } to the box
+         */
         for (String step : steps) {
             String[] temp = step.split("(?=-|=\\d$)");
             String label = temp[0];
             String instruction = temp[1];
             int i = hash(label);
+
             if (instruction.equals("-")) hashmap[i].remove(label); // if ends with '-' remove
             else hashmap[i].put(label, instruction.charAt(1) - '0'); // if ends with '=d' (d = digit) add/update
         }
