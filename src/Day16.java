@@ -8,58 +8,60 @@ enum Direction {
     UP, RIGHT, LEFT, DOWN
 }
 
-class Move {
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Move move = (Move) o;
-        return i == move.i && j == move.j && direction == move.direction;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(i, j, direction);
-    }
-
-    public int i;
-    public int j;
-    public Direction direction;
-
-    public Move(int i, int j, Direction direction) {
-        this.i = i;
-        this.j = j;
-        this.direction = direction;
-    }
-
-    public Move next() {
-        switch (direction) {
-            case Direction.UP: return new Move(i - 1, j, direction);
-            case Direction.DOWN: return new Move(i + 1, j, direction);
-            case Direction.LEFT: return new Move(i, j - 1, direction);
-            case Direction.RIGHT: return new Move(i, j + 1, direction);
-            default: return null;
-        }
-    }
-
-    public Move up() {
-        return new Move(i - 1, j, Direction.UP);
-    }
-
-    public Move down() {
-        return new Move(i + 1, j, Direction.DOWN);
-    }
-
-    public Move left() {
-        return new Move(i, j - 1, Direction.LEFT);
-    }
-
-    public Move right() {
-        return new Move(i, j + 1, Direction.RIGHT);
-    }
-}
 
 public class Day16 {
+
+    private static class Move {
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Move move = (Move) o;
+            return i == move.i && j == move.j && direction == move.direction;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(i, j, direction);
+        }
+
+        public int i;
+        public int j;
+        public Direction direction;
+
+        public Move(int i, int j, Direction direction) {
+            this.i = i;
+            this.j = j;
+            this.direction = direction;
+        }
+
+        public Move next() {
+            return switch (direction) {
+                case Direction.UP -> new Move(i - 1, j, direction);
+                case Direction.DOWN -> new Move(i + 1, j, direction);
+                case Direction.LEFT -> new Move(i, j - 1, direction);
+                case Direction.RIGHT -> new Move(i, j + 1, direction);
+                default -> null;
+            };
+        }
+
+        public Move up() {
+            return new Move(i - 1, j, Direction.UP);
+        }
+
+        public Move down() {
+            return new Move(i + 1, j, Direction.DOWN);
+        }
+
+        public Move left() {
+            return new Move(i, j - 1, Direction.LEFT);
+        }
+
+        public Move right() {
+            return new Move(i, j + 1, Direction.RIGHT);
+        }
+    }
 
     private static boolean isEnergized(char c) {
         return (
@@ -204,6 +206,6 @@ public class Day16 {
             part2Answer = Math.max(part2Answer, countEnergized(grid, new Move(grid.length - 1, j, Direction.UP)));
         }
 
-        System.out.println("The answer to part 2 is: " + part2Answer);
+         System.out.println("The answer to part 2 is: " + part2Answer);
     }
 }
